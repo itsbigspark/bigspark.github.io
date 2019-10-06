@@ -143,8 +143,8 @@ p {
 }
 
 .fit-picture {
-    position : absolute;
+    position : relative;
     width: 70px;
-    right: 700px;
-    top: -30px;
+    right:34px;
+    top: -43px;
 }
