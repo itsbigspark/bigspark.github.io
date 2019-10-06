@@ -101,12 +101,33 @@ p {
 }
 
 @media only screen and (max-width: 1000px) {
+      h2 {
+  text-transform: lowercase;
+  font-size: 60px;
+  font-weight: 200;
+  color: #ffffff;
+  letter-spacing: -5px;
+}
   h1 {
     font-size: 15px;
   }
+    .fit-picture {
+      position : relative;
+      width: 70px;
+      right:34px;
+      top: -43px;
+  }
 }
 
-@media only screen and (max-width: 100px) {
+@media only screen and (max-width: 500px) {
+      h2 {
+  text-transform: lowercase;
+  font-size: 60px;
+  font-weight: 200;
+  color: #ffffff;
+  letter-spacing: -5px;
+}
+
   h1 {
     font-size: 15px;
   }
@@ -114,11 +135,24 @@ p {
     height: 8px;
   }
 }
+.fit-picture {
+    position : relative;
+    width: 70px;
+    right:34px;
+    top: -43px;
+}
 
 @media only screen and (max-width: 100px) {
   #intro {
     padding: 0 10px;
   }
+    h2 {
+  text-transform: lowercase;
+  font-size: 60px;
+  font-weight: 200;
+  color: #ffffff;
+  letter-spacing: -5px;
+}
   h1 {
     font-size: 15px;
   }
@@ -132,19 +166,9 @@ p {
     font-size: 16px;
   }
 }
-
-@media only screen and (max-width: 100px) {
-  h1 {
-    font-size: 15px;
-  }
-  h1::after {
-    height: 4px;
-  }
-}
-
 .fit-picture {
     position : relative;
-    width: 70px;
-    right:34px;
-    top: -43px;
+    width: 40px;
+    right:10px;
+    top: -20px;
 }
