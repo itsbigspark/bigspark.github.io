@@ -58,10 +58,10 @@ html, body {
 body {
   background: #000010;
   font-family: 'Aileron';
-  src: url("Aileron-Heavy.woff") format('woff');
-  src: url('Aileron-Heavy?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  src: url("Aileron-Heavy.woff") format('woff'),
        url('Aileron-Heavy.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('Aileron-Heavy.svg#svgFontName') format('svg'); /* Legacy iOS */
+       url('Aileron-Heavy.svg') format('svg'), /* Legacy iOS */
+       url('Aileron-Heavy.otf') format('opentype'); 
   color: #fff;
   line-height: 1.3;t
   -webkit-font-smoothing: antialiased;
