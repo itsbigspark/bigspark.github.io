@@ -84,7 +84,7 @@ body {
 h2 {
   text-transform: lowercase;
   font-size: 300%;
-  font-weight: 200z;
+  font-weight: 200;
   color: #ffffff;
   letter-spacing: -5px;
 }
@@ -96,6 +96,10 @@ h1::after {
   height: 10px;
   margin: 30px auto;
   line-height: 1.1;
+}
+.fit-picture {
+    position : relative;
+    width: 50%;
 }
 p {
   margin: 0 0 30px 0;
@@ -145,9 +149,3 @@ p {
   }
 }
 
-.fit-picture {
-    position : relative;
-    width: 10%;
-    right:10px;
-    top: -20px;
-}
