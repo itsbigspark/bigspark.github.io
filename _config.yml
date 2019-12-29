@@ -1,0 +1,87 @@
+title: ""              # Site title in default language
+
+description: ""        # A short description in default language
+
+url: "https://marcanuy.github.io/jekyll-skeleton" # The full URL to your site.
+  # Note: site.github.url will be used by default.
+
+author: shainnif       # Global author information, should be the
+  # key of file: _data/authors.yml to be used in
+# site.data.authors[author]
+
+twitter:
+  username: marcanuy   # site-wide Twitter handle
+
+facebook:
+  app_id: 1234         # a Facebook app ID for Facebook insights
+  publisher: 1234      # a Facebook page URL or ID of the publishing entity
+  admins: 1234         # facebook:admins - a Facebook user ID for domain
+  #   insights linked to a personal account
+logo:                  # /assets/img/your-company-logo.png - URL to a site-wide logo (e.g., /)
+
+social:
+  name: Marcelo Canina
+  links:
+    - https://twitter.com/marcanuy
+    - https://www.linkedin.com/in/marcelocanina
+    - https://plus.google.com/118415138433063920612
+    - https://github.com/marcanuy
+    - https://keybase.io/marcanuy
+    #- https://www.facebook.com/marcanuy
+
+webmaster_verifications:
+  # Google verification method: HTML tag
+  # the value of the *content* attribute: <meta name="google-site-verification" content="jXQVtt7ISFtvOvNUYoAQ0NiOaaQMWzSwoV2_FIqr2W4" />
+  google: "jXQVtt7ISFtvOvNUYoAQ0NiOaaQMWzSwoV2_FIqr2W4"
+  bing: #1234
+  alexa: #1234
+  yandex: #1234
+
+lang: en_US
+
+##########################################################################
+
+# sass style can be nested (default), compact, compressed, or expanded.
+sass:
+  load_paths:
+    - _sass
+    - node_modules
+  style: compressed
+
+plugins:
+  - jekyll-toc
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+defaults:
+  #languages
+  -
+    scope:
+      path: ""
+    values:
+      lang: "en"
+      layout: default
+  -
+    scope:
+      path: "es"
+    values:
+      lang: "es"
+  -
+    scope:
+      path: "de"
+    values:
+      lang: "de"
+
+permalink: /:categories/:title
+
+exclude:
+  - vendor
+  - deploy.sh
+  - node_modules
+  - Makefile
+  - Gemfile
+  - Gemfile.lock
+  - yarn.lock
+  - packages.json
