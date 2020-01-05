@@ -1,9 +1,109 @@
+{%- assign assets_path = "assets/" -%}
+{%- if site.assets_path -%}
+  {%- assign assets_path = site.assets_path -%}
+{%- endif -%}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 {% include head.html %}
-	<body>
-	{% include nav.html %}
-		{{ content }}
-	{% include foot.html %}
-	</body>
+<body id="page-top">
+{% include nav.html %}
+{{ content }}
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">{{ site.data.default.copyright }}</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              {%- for sm in site.data.default.social-buttons -%}
+              {% assign ws = '' %}
+              <li class="list-inline-item">
+                <a href="{{ sm.url }}">
+                  <i class="{{ sm.icon }}"></i>
+                </a>
+              </li>
+              {%- endfor -%}
+            {% assign ws = '' %}
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              {%- for ql in site.data.default.quicklinks -%}
+              {% assign ws = '' %}
+              <li class="list-inline-item">
+                <a href="{{ ql.url }}">{{ ql.title }}</a>
+              </li>
+              {%- endfor -%}
+            {% assign ws = '' %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {% assign ws = '' %}
+    {%- if page.layout == 'home' -%}
+    <!-- Portfolio Modals -->
+    {%- for project in site.projects -%}
+{% assign ws = '' %}
+
+    <!-- Modal {{ project.id | replace: '/projects/', '' }} -->
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ project.id | replace: '/projects/', '' }}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">{{ project.title }}</h2>
+                  <p class="item-intro text-muted">{{ project.description }}</p>
+                  <img class="img-fluid d-block mx-auto" src="{{ assets_path }}{{ project.image }}" alt="">
+                  {% assign ws = '' %}
+                  {{- project.content -}}
+                  {% assign ws = '' %}                  <ul class="list-inline">
+                    <li>{{ site.data.default.modal.date-string }}{{ project.date | date: "%B %Y" }}</li>
+                    <li>{{ site.data.default.modal.client-string }}{{ project.client }}</li>
+                    <li>{{ site.data.default.modal.category-string }}{{ project.category }}</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="{{ site.data.default.modal.close-icon }}"></i>
+                    {{ site.data.default.modal.close-string }}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%- endfor -%}
+
+    {%- endif -%}
+    {% assign ws = '' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ assets_path }}vendor/jquery/jquery.min.js"></script>
+    <script src="{{ assets_path }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ assets_path }}vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="{{ assets_path }}js/jqBootstrapValidation.js"></script>
+    <script src="{{ assets_path }}js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ assets_path }}js/agency.min.js"></script>
+
+  </body>
+
 </html>
