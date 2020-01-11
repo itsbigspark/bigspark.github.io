@@ -17,9 +17,9 @@ nav:
 copyright: Copyright &copy; Your Website 2018
 
 social-buttons:
-  - icon: fa fa-twitter
+  - icon: fa fa-medium
     url: '#'
-  - icon: fa fa-facebook
+  - icon: fa fa-github
     url: '#'
   - icon: fa fa-linkedin
     url: '#'
